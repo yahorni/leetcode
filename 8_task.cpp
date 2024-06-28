@@ -8,6 +8,7 @@
 using namespace std;
 // using namespace std::literals;
 
+// link: https://leetcode.com/problems/string-to-integer-atoi/description/
 // constraints:
 // 0 <= s.length <= 200
 // s consists of English letters (lower-case and upper-case), digits (0-9), ' ',
