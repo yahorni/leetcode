@@ -10,6 +10,9 @@
 using namespace std;
 using namespace std::literals;
 
+// link:
+// constraints:
+
 #pragma GCC optimize("O3,unroll-loops")
 #pragma GCC target("avx2,bmi,bmi2,lzcnt,popcnt")
 
@@ -20,15 +23,12 @@ static const bool _ = []() {
     return true;
 }();
 
-// link:
-// constraints:
-
 class Solution {
 public:
-    int method() { return 1; }
+    int method() { return {}; }
 };
 
 int main() {
     Solution s;
-    assert(s.method() == 1);
+    assert(s.method() == 0);
 }
