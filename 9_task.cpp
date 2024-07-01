@@ -9,6 +9,7 @@ using namespace std;
 using namespace std::literals;
 
 // link: https://leetcode.com/problems/palindrome-number
+// name: 9. Palindrome Number
 // constraints:
 // -2^31 <= x <= 2^31 - 1
 

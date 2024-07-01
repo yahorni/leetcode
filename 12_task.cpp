@@ -11,6 +11,7 @@ using namespace std;
 using namespace std::literals;
 
 // link: https://leetcode.com/problems/integer-to-roman
+// name: 12. Integer to Roman
 // constraints:
 // 1 <= num <= 3999
 //
@@ -22,8 +23,10 @@ using namespace std::literals;
 // D 500
 // M 1000
 
-// #pragma GCC optimize("O3,unroll-loops")
-// #pragma GCC target("avx2,bmi,bmi2,lzcnt,popcnt")
+#ifdef __GNUC__
+#pragma GCC optimize("O3,unroll-loops")
+#pragma GCC target("avx2,bmi,bmi2,lzcnt,popcnt")
+#endif
 
 static const bool _ = []() {
     ios_base::sync_with_stdio(false);

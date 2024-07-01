@@ -9,6 +9,7 @@ using namespace std;
 // using namespace std::literals;
 
 // link: https://leetcode.com/problems/string-to-integer-atoi/description/
+// name: 8. String to Integer (atoi)
 // constraints:
 // 0 <= s.length <= 200
 // s consists of English letters (lower-case and upper-case), digits (0-9), ' ',

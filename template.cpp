@@ -11,10 +11,13 @@ using namespace std;
 using namespace std::literals;
 
 // link:
+// name:
 // constraints:
 
+#ifdef __GNUC__
 #pragma GCC optimize("O3,unroll-loops")
 #pragma GCC target("avx2,bmi,bmi2,lzcnt,popcnt")
+#endif
 
 static const bool _ = []() {
     ios_base::sync_with_stdio(false);

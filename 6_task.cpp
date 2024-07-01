@@ -6,6 +6,7 @@ using namespace std;
 using namespace std::literals;
 
 // link: https://leetcode.com/problems/zigzag-conversion
+// name: 6. Zigzag Conversion
 
 class Solution {
 public:
