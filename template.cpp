@@ -28,10 +28,13 @@ static const bool _ = []() {
 
 class Solution {
 public:
-    int method() { return {}; }
+    int method(int a) {
+        (void)a;
+        return {};
+    }
 };
 
 int main() {
     Solution s;
-    assert(s.method() == 0);
+    assert(s.method(0) == 0);
 }
