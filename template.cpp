@@ -29,6 +29,27 @@ static const bool _ = []() {
     return true;
 }();
 
+void print(const vector<vector<int>>& a) {
+    cerr << "{";
+    for (const auto& v : a) {
+        cerr << "{";
+        for (const auto& i : v) {
+            cerr << i << ",";
+        }
+        cerr << "},";
+    }
+    cerr << "}";
+}
+
+void check(const vector<vector<int>>& a, const vector<vector<int>>& e) {
+    print(a);
+    cerr << " == ";
+    print(e);
+    cerr << endl;
+    multiset<vector<int>> as{a.begin(), a.end()}, es{e.begin(), e.end()};
+    assert(as == es);
+}
+
 class Solution {
 public:
     int method(int a) {
