@@ -7,6 +7,7 @@
 #include <iterator>   // IWYU pragma: keep
 #include <numeric>    // IWYU pragma: keep
 #include <set>        // IWYU pragma: keep
+#include <stack>      // IWYU pragma: keep
 #include <string>     // IWYU pragma: keep
 #include <vector>     // IWYU pragma: keep
 
@@ -31,8 +32,8 @@ static const bool _ = []() {
 
 class Solution {
 public:
-    int method(int a) {
-        (void)a;
+    int method(int) {
+        (void)0;
         return {};
     }
 };
