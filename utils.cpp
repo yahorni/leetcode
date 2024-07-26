@@ -5,7 +5,7 @@
 
 using namespace std;
 
-void print_vector(const vector<vector<int>>& a) {
+void print_matrix(const vector<vector<int>>& a) {
     cerr << "{";
     for (const auto& v : a) {
         cerr << "{";
@@ -17,12 +17,15 @@ void print_vector(const vector<vector<int>>& a) {
     cerr << "}";
 }
 
-void check_vectors(const vector<vector<int>>& a, const vector<vector<int>>& e) {
-    print_vector(a);
+void check_matrices(const vector<vector<int>>& a, const vector<vector<int>>& e) {
+    print_matrix(a);
     cerr << " == ";
-    print_vector(e);
+    print_matrix(e);
     cerr << endl;
     multiset<vector<int>> as{a.begin(), a.end()}, es{e.begin(), e.end()};
     assert(as == es);
 }
 
+void check_strings(const vector<string>& a, const vector<string>& e) {
+  assert(a == e);
+}
