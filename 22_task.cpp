@@ -30,8 +30,6 @@ static const bool _ = []() {
     return true;
 }();
 
-void check_strings(const vector<string>& a, const vector<string>& e) { assert(a == e); }
-
 // size of the result is a sequence of Catalan numbers
 // 1, 2, 5, 14, 42, 132, 429, 1430
 // https://oeis.org/A000108
@@ -39,21 +37,23 @@ void check_strings(const vector<string>& a, const vector<string>& e) { assert(a 
 
 class Solution {
 public:
-    vector<string> generateParenthesis(int n) {
-        vector<string> r;
-        size_t sz;
+    size_t getSize(int n) {
         switch (n) {
-            case 1: sz = 1; break;
-            case 2: sz = 2; break;
-            case 3: sz = 5; break;
-            case 4: sz = 14; break;
-            case 5: sz = 42; break;
-            case 6: sz = 132; break;
-            case 7: sz = 429; break;
-            case 8: sz = 1430; break;
-            default: sz = 0; break;
+            case 1: return 1;
+            case 2: return 2;
+            case 3: return 5;
+            case 4: return 14;
+            case 5: return 42;
+            case 6: return 132;
+            case 7: return 429;
+            case 8: return 1430;
+            default: return 0;
         }
-        r.reserve(sz);
+    }
+
+    vector<string> generateParenthesis_original(int n) {
+        vector<string> r;
+        r.reserve(getSize(n));
 
         string buf = std::string(n - 1, '(') + std::string(n - 1, ')');
         r.push_back(std::string("(") + buf + ")");
@@ -74,7 +74,39 @@ public:
 
         return r;
     }
+
+    vector<string> generateParenthesis(int n) {
+        vector<string> r;
+        r.reserve(getSize(n));
+        string buf{"("s};
+        recurse(r, buf, 1, n-1);
+        return r;
+    }
+
+    void recurse(vector<string>& r, string& buf, int opened, int left_to_open) {
+        // 0. nothing to add
+        if (opened == 0 && left_to_open == 0) {
+            r.push_back(buf);
+            return;
+        }
+
+        // 1. add opened
+        if (left_to_open > 0) {
+            buf.push_back('(');
+            recurse(r, buf, opened+1, left_to_open-1);
+            buf.pop_back();
+        }
+
+        // 2. add closed
+        if (opened != 0) {
+            buf.push_back(')');
+            recurse(r, buf, opened-1, left_to_open);
+            buf.pop_back();
+        }
+    }
 };
+
+void check_strings(const vector<string>& a, const vector<string>& e) { assert(a == e); }
 
 int main() {
     Solution s;

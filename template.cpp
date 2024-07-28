@@ -5,8 +5,10 @@
 #include <climits>    // IWYU pragma: keep
 #include <iostream>   // IWYU pragma: keep
 #include <iterator>   // IWYU pragma: keep
+#include <map>        // IWYU pragma: keep
 #include <numeric>    // IWYU pragma: keep
 #include <set>        // IWYU pragma: keep
+#include <span>       // IWYU pragma: keep
 #include <stack>      // IWYU pragma: keep
 #include <string>     // IWYU pragma: keep
 #include <vector>     // IWYU pragma: keep
