@@ -38,7 +38,7 @@ static const bool _ = []() {
     return true;
 }();
 
-#include "./utils.cpp"
+#include "utils.cpp"
 
 class Solution {
 public:

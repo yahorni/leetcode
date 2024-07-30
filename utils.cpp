@@ -47,7 +47,7 @@ struct ListNode {
 
 namespace list_util {
 
-ListNode* create(const vector<int> l) {
+ListNode* create(const vector<int>& l) {
     ListNode* head{nullptr};
 
     for (auto it = l.rbegin(); it != l.rend(); it++) {
@@ -77,7 +77,7 @@ void clear(ListNode* l) {
     }
 }
 
-void check(ListNode* a, const vector<int> e) {
+void check(ListNode* a, const vector<int>& e) {
     static int test_n = 0;
     cerr << "test: " << ++test_n << endl;
 
