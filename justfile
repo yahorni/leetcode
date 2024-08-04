@@ -2,7 +2,7 @@
 
 # https://github.com/casey/just
 
-task := "24"
+task := "25"
 src := task + "_task.cpp"
 exe := task + "_task"
 
