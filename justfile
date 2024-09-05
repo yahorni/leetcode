@@ -2,7 +2,7 @@
 
 # https://github.com/casey/just
 
-task := "25"
+task := "76"
 src := task + "_task.cpp"
 exe := task + "_task"
 
@@ -18,6 +18,7 @@ run:
 	./{{exe}}
 
 git:
+	git add -u
 	git add {{src}}
 	git commit -m "add task {{task}}"
 

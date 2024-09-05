@@ -26,4 +26,20 @@ void check_matrices(const vector<vector<int>>& a, const vector<vector<int>>& e) 
     assert(as == es);
 }
 
-void check_strings(const vector<string>& a, const vector<string>& e) { assert(a == e); }
+template<typename T>
+void print_vector(const vector<T>& v) {
+    cerr << "{";
+    for (const auto& e : v) cerr << e << ",";
+    cerr << "}";
+}
+
+template<typename T>
+void check_vectors(const vector<T>& a, const vector<T>& e) {
+    static int t{};
+    std::cout << "test: " << ++t << endl;
+    print_vector(a);
+    cerr << " == ";
+    print_vector(e);
+    cerr << endl << endl;
+    assert(a == e);
+}
