@@ -2,17 +2,28 @@
 
 # https://github.com/casey/just
 
-task := "76"
-src := task + "_task.cpp"
-exe := task + "_task"
+set dotenv-load
+
+src := "tasks/${LAST_TASK}.cpp"
+exe := "${LAST_TASK}_task"
 
 default: run
 
 create:
 	cp template.cpp {{src}}
 
+edit:
+	${EDITOR:-nvim} {{src}}
+
 build:
-	compiler.sh ./{{src}}
+	# to check compilation process with clang: clangd --check=<file>
+	g++ \
+		--std=c++20 \
+		-Wall -Wextra -pedantic \
+		-fsanitize=undefined \
+		-fsanitize=address \
+		-fsanitize=signed-integer-overflow \
+		-o {{exe}} {{src}} -I./helpers/
 
 run:
 	./{{exe}}
@@ -20,7 +31,7 @@ run:
 git:
 	git add -u
 	git add {{src}}
-	git commit -m "add task {{task}}"
+	git commit -m "add task ${LAST_TASK}"
 
 rm:
 	rm -f ./{{exe}}

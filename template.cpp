@@ -1,9 +1,6 @@
 // vim: ts=4 sts=4 sw=4 et
 
-#include "includes.hpp"
-
-using namespace std;
-using namespace std::literals;
+#include "stdlib.hpp"
 
 // link:
 // name:

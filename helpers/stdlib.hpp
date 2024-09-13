@@ -12,3 +12,6 @@
 #include <unordered_map>  // IWYU pragma: keep
 #include <unordered_set>  // IWYU pragma: keep
 #include <vector>         // IWYU pragma: keep
+
+using namespace std;
+using namespace std::literals;
