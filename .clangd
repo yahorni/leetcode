@@ -1,3 +1,4 @@
 CompileFlags:
   Add: # e.g `-I/usr/include/SDL2`
     - "-I../helpers/"
+    - "-std=c++20"

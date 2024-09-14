@@ -7,7 +7,7 @@ set dotenv-load
 src := "tasks/${LAST_TASK}.cpp"
 exe := "${LAST_TASK}_task"
 
-default: run
+default: build run
 
 create:
 	cp template.cpp {{src}}
@@ -19,6 +19,7 @@ build:
 	# to check compilation process with clang: clangd --check=<file>
 	g++ \
 		--std=c++20 \
+		-g -O0 \
 		-Wall -Wextra -pedantic \
 		-fsanitize=undefined \
 		-fsanitize=address \

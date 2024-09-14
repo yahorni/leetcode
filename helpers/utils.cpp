@@ -2,6 +2,7 @@
 #include <iostream>
 #include <set>
 #include <vector>
+#include <span>
 
 using namespace std;
 
@@ -30,6 +31,13 @@ template<typename T>
 void print_vector(const vector<T>& v) {
     cerr << "{";
     for (const auto& e : v) cerr << e << ",";
+    cerr << "}";
+}
+
+template<typename T>
+void print_span(span<const T> s) {
+    cerr << "{";
+    for (const auto& e : s) cerr << e << ",";
     cerr << "}";
 }
 
